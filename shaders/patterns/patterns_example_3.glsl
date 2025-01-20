@@ -39,8 +39,14 @@ vec3 drawSquare(in vec2 _uv) {
   return color;
 }
 
+float checkLineEvenOrOdd(in vec2 _uv) {
+  // return 0 is even
+  // return 1 is odd: move the line
+  return step(1.0, mod(_uv.y, 2.0));
+}
+
 vec2 applyOffsetOddRows(in vec2 _uv) {
-  _uv.x += step(1.0, mod(_uv.y, 2.0)) * 0.5;
+  _uv.x += checkLineEvenOrOdd(_uv) * 0.5;
 
   return _uv;
 }
