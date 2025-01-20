@@ -49,3 +49,4 @@ flutter:
     - shaders/patterns/patterns_example_1.glsl
     - shaders/patterns/patterns_example_2.glsl
     - shaders/patterns/patterns_example_3.glsl
+    - shaders/patterns/patterns_example_4.glsl

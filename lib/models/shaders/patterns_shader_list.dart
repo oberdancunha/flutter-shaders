@@ -5,5 +5,5 @@ final class PatternsShaderList extends ShaderList {
   String get mainPath => 'patterns';
 
   @override
-  int get count => 3;
+  int get count => 4;
 }
