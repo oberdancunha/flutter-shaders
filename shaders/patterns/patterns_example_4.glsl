@@ -21,7 +21,7 @@ vec2 rotate2D(in vec2 _uv, in float _angle) {
     sin(_angle),
     cos(_angle)
   ) * _uv;
-  _uv *= 0.5;
+  _uv += 0.5;
 
   return _uv;
 }
