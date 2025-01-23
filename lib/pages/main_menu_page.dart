@@ -17,41 +17,45 @@ final class MainMenuPage extends StatelessWidget {
       body: Center(
         child: GridView.count(
           crossAxisCount: 2,
-          children: List.generate(
-            mainMenu.length,
-            (index) => Center(
+          children: List.generate(mainMenu.length, (index) {
+            final menuElement = mainMenu.elementAt(index);
+            final title = menuElement.title;
+            final titleHeightMultiplayFactor = title.length <= 11 ? 0.18 : 0.21;
+
+            return Center(
               child: SizedBox(
                 width: screenSize.width * 0.25,
-                height: screenSize.height * 0.18,
+                height: screenSize.height * titleHeightMultiplayFactor,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     ButtonWidget(
-                      image: mainMenu.elementAt(index).image,
+                      image: menuElement.image,
                       onTap: () {
                         Navigator.pushNamed(
                           context,
                           '/shaders',
                           arguments: <String, dynamic>{
-                            'shaders': mainMenu.elementAt(index).shaders,
-                            'title': 'Shaders - ${mainMenu.elementAt(index).title}',
+                            'shaders': menuElement.shaders,
+                            'title': 'Shaders - $title',
                           },
                         );
                       },
                     ),
                     Text(
-                      mainMenu.elementAt(index).title,
+                      title,
                       style: TextStyle(
                         fontSize: screenSize.width * 0.04,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
+                      textAlign: TextAlign.center,
                     ),
                   ],
                 ),
               ),
-            ),
-          ),
+            );
+          }),
         ),
       ),
     );

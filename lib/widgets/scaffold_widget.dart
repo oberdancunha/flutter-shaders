@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 @immutable
@@ -14,13 +15,14 @@ final class ScaffoldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: AutoSizeText(
             title,
-            style: TextStyle(
-              fontSize: MediaQuery.sizeOf(context).width * 0.075,
-              color: Colors.white,
-              fontWeight: FontWeight.w500,
-            ),
+            maxLines: 1,
+          ),
+          titleTextStyle: TextStyle(
+            fontSize: MediaQuery.sizeOf(context).width * 0.075,
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
           ),
         ),
         body: body,
