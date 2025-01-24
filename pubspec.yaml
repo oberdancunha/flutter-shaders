@@ -55,3 +55,4 @@ flutter:
     - shaders/patterns/patterns_example_5.glsl
 
     - shaders/generative_designs/generative_designs_example_1.glsl
+    - shaders/generative_designs/generative_designs_example_2.glsl
