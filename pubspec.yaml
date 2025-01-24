@@ -27,6 +27,7 @@ flutter:
     - assets/images/shape/
     - assets/images/matrizes_2d/
     - assets/images/patterns/
+    - assets/images/generative_designs/
   
   shaders:
     - shaders/color/color_example_1.glsl
@@ -52,3 +53,5 @@ flutter:
     - shaders/patterns/patterns_example_3.glsl
     - shaders/patterns/patterns_example_4.glsl
     - shaders/patterns/patterns_example_5.glsl
+
+    - shaders/generative_designs/generative_designs_example_1.glsl

@@ -1,4 +1,5 @@
 import '../shaders/color_shader_list.dart';
+import '../shaders/generative_designs_shader_list.dart';
 import '../shaders/matrizes_2d_shader_list.dart';
 import '../shaders/patterns_shader_list.dart';
 import '../shaders/shape_shader_list.dart';
@@ -24,5 +25,10 @@ List<MainMenuModel> get mainMenu => [
         title: 'Patterns',
         image: 'main_menu/patterns.jpg',
         shaders: PatternsShaderList().shadersList,
+      ),
+      MainMenuModel(
+        title: 'Generative designs',
+        image: 'main_menu/generative_designs.jpeg',
+        shaders: GenerativeDesignsShaderList().shadersList,
       ),
     ];
