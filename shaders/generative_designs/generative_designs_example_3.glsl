@@ -26,11 +26,11 @@ float makeMaze(in vec2 _tile) {
   return maze;
 }
 
-float random (in vec2 st) {
+float random (in vec2 _uv) {
   return fract(
     sin(
       dot(
-        st.xy,
+        _uv.xy,
         vec2(
           12.9898,
           78.233
