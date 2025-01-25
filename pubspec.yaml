@@ -28,6 +28,7 @@ flutter:
     - assets/images/matrizes_2d/
     - assets/images/patterns/
     - assets/images/generative_designs/
+    - assets/images/noise/
   
   shaders:
     - shaders/color/color_example_1.glsl
@@ -59,3 +60,5 @@ flutter:
     - shaders/generative_designs/generative_designs_example_3.glsl
     - shaders/generative_designs/generative_designs_example_4.glsl
     - shaders/generative_designs/generative_designs_example_5.glsl
+
+    - shaders/noise/noise_example_1.glsl
