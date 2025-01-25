@@ -5,5 +5,5 @@ final class GenerativeDesignsShaderList extends ShaderList {
   String get mainPath => 'generative_designs';
 
   @override
-  int get count => 4;
+  int get count => 5;
 }
