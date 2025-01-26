@@ -62,3 +62,4 @@ flutter:
     - shaders/generative_designs/generative_designs_example_5.glsl
 
     - shaders/noise/noise_example_1.glsl
+    - shaders/noise/noise_example_2.glsl

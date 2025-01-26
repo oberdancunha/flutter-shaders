@@ -5,5 +5,5 @@ final class NoiseShaderList extends ShaderList {
   String get mainPath => 'noise';
 
   @override
-  int get count => 1;
+  int get count => 2;
 }
