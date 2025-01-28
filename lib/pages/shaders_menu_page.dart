@@ -5,8 +5,27 @@ import '../widgets/button_widget.dart';
 import '../widgets/scaffold_widget.dart';
 
 @immutable
-final class ShadersMenuPage extends StatelessWidget {
+final class ShadersMenuPage extends StatefulWidget {
   const ShadersMenuPage({super.key});
+
+  @override
+  State<ShadersMenuPage> createState() => _ShadersMenuPageState();
+}
+
+class _ShadersMenuPageState extends State<ShadersMenuPage> {
+  late ScrollController _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,25 +38,31 @@ final class ShadersMenuPage extends StatelessWidget {
     return ScaffoldWidget(
       title: title,
       body: Center(
-        child: GridView.count(
-          crossAxisCount: 2,
-          children: List.generate(
-            shaders.length,
-            (index) => Center(
-              child: SizedBox(
-                width: screenSize.width * 0.25,
-                height: screenSize.height * 0.15,
-                child: ButtonWidget(
-                  image: shaders.elementAt(index).image,
-                  onTap: () {
-                    Navigator.pushNamed(
-                      context,
-                      '/shader',
-                      arguments: <String, String>{
-                        'shaderFile': shaders.elementAt(index).fileName,
-                      },
-                    );
-                  },
+        child: Scrollbar(
+          controller: _scrollController,
+          thumbVisibility: true,
+          child: GridView.count(
+            crossAxisCount: 2,
+            scrollDirection: Axis.vertical,
+            controller: _scrollController,
+            children: List.generate(
+              shaders.length,
+              (index) => Center(
+                child: SizedBox(
+                  width: screenSize.width * 0.25,
+                  height: screenSize.height * 0.15,
+                  child: ButtonWidget(
+                    image: shaders.elementAt(index).image,
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        '/shader',
+                        arguments: <String, String>{
+                          'shaderFile': shaders.elementAt(index).fileName,
+                        },
+                      );
+                    },
+                  ),
                 ),
               ),
             ),
