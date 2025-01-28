@@ -41,28 +41,26 @@ class _ShadersMenuPageState extends State<ShadersMenuPage> {
         child: Scrollbar(
           controller: _scrollController,
           thumbVisibility: true,
-          child: GridView.count(
-            crossAxisCount: 2,
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             scrollDirection: Axis.vertical,
             controller: _scrollController,
-            children: List.generate(
-              shaders.length,
-              (index) => Center(
-                child: SizedBox(
-                  width: screenSize.width * 0.25,
-                  height: screenSize.height * 0.15,
-                  child: ButtonWidget(
-                    image: shaders.elementAt(index).image,
-                    onTap: () {
-                      Navigator.pushNamed(
-                        context,
-                        '/shader',
-                        arguments: <String, String>{
-                          'shaderFile': shaders.elementAt(index).fileName,
-                        },
-                      );
-                    },
-                  ),
+            itemCount: shaders.length,
+            itemBuilder: (_, index) => Center(
+              child: SizedBox(
+                width: screenSize.width * 0.25,
+                height: screenSize.height * 0.15,
+                child: ButtonWidget(
+                  image: shaders.elementAt(index).image,
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/shader',
+                      arguments: <String, String>{
+                        'shaderFile': shaders.elementAt(index).fileName,
+                      },
+                    );
+                  },
                 ),
               ),
             ),

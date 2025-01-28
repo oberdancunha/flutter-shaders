@@ -15,9 +15,10 @@ final class MainMenuPage extends StatelessWidget {
     return ScaffoldWidget(
       title: 'Shaders',
       body: Center(
-        child: GridView.count(
-          crossAxisCount: 2,
-          children: List.generate(mainMenu.length, (index) {
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          itemCount: mainMenu.length,
+          itemBuilder: (_, index) {
             final menuElement = mainMenu.elementAt(index);
             final title = menuElement.title;
             final titleHeightMultiplayFactor = title.length <= 11 ? 0.18 : 0.21;
@@ -55,7 +56,7 @@ final class MainMenuPage extends StatelessWidget {
                 ),
               ),
             );
-          }),
+          },
         ),
       ),
     );
