@@ -69,3 +69,4 @@ flutter:
     - shaders/noise/noise_example_6.glsl
     - shaders/noise/noise_example_7.glsl
     - shaders/noise/noise_example_8.glsl
+    - shaders/noise/noise_example_9.glsl
