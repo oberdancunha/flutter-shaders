@@ -1,3 +1,4 @@
+import '../shaders/cellular_noise_shader_list.dart';
 import '../shaders/color_shader_list.dart';
 import '../shaders/generative_designs_shader_list.dart';
 import '../shaders/matrizes_2d_shader_list.dart';
@@ -36,5 +37,10 @@ List<MainMenuModel> get mainMenu => [
         title: 'Noise',
         image: 'main_menu/noise.jpg',
         shaders: NoiseShaderList().shadersList,
+      ),
+      MainMenuModel(
+        title: 'Cellular noise',
+        image: 'main_menu/cellular_noise.jpg',
+        shaders: CellularNoiseShaderList().shadersList,
       ),
     ];

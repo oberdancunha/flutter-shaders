@@ -29,6 +29,7 @@ flutter:
     - assets/images/patterns/
     - assets/images/generative_designs/
     - assets/images/noise/
+    - assets/images/cellular_noise/
   
   shaders:
     - shaders/color/color_example_1.glsl
