@@ -74,3 +74,4 @@ flutter:
 
     - shaders/cellular_noise/cellular_noise_example_1.glsl
     - shaders/cellular_noise/cellular_noise_example_2.glsl
+    - shaders/cellular_noise/cellular_noise_example_3.glsl
