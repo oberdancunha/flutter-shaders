@@ -14,6 +14,8 @@ const vec2 uMouseSimulation = vec2(0.0);
 
 out vec4 fragColor;
 
+vec2 point[AMOUNT_POINTS];
+
 vec3 drawMinDistance(in vec3 _color, in float _minimumDistance) {
   _color += _minimumDistance;
 
@@ -24,9 +26,9 @@ float keepCloserDistance(in float _minimumDistance, in float _distance) {
   return min(_minimumDistance, _distance);
 }
 
-float iterateThroughPointsPositions(in vec2 _uv, in float _minimumDistance, in vec2[AMOUNT_POINTS] _point) {
+float iterateThroughPointsPositions(in vec2 _uv, in float _minimumDistance) {
   for(int i = 0; i < AMOUNT_POINTS; i++) {
-    float dist = distance(_uv, _point[i]);
+    float dist = distance(_uv, point[i]);
     _minimumDistance = keepCloserDistance(
       _minimumDistance,
       dist
@@ -36,15 +38,12 @@ float iterateThroughPointsPositions(in vec2 _uv, in float _minimumDistance, in v
   return _minimumDistance;
 }
 
-vec2[AMOUNT_POINTS] getCellPositions() {
-  vec2 point[AMOUNT_POINTS];
+void getCellPositions() {
   point[0] = vec2(0.83, 0.75);
   point[1] = vec2(0.60, 0.07);
   point[2] = vec2(0.28, 0.64);
   point[3] = vec2(0.31, 0.26);
   point[4] = uMouseSimulation / uSize;
-
-  return point;
 }
 
 vec2 invertVerticalScreen(in vec2 _uv) {
@@ -56,12 +55,11 @@ vec2 invertVerticalScreen(in vec2 _uv) {
 vec3 makeColor(in vec2 _uv) {
   _uv = invertVerticalScreen(_uv);
   vec3 color = vec3(0.0);
-  vec2[AMOUNT_POINTS] point = getCellPositions();
+  getCellPositions();
   float minimumDistance = 1.0;
   minimumDistance =  iterateThroughPointsPositions(
     _uv,
-    minimumDistance,
-    point
+    minimumDistance
   );
   color = drawMinDistance(color, minimumDistance);
 
