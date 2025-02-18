@@ -18,9 +18,7 @@ final class ButtonWidget extends StatelessWidget {
         baseColor: Theme.of(context).colorScheme.primary,
       ).getColor(adjustColor: -adjustColor ~/ 2),
     );
-    final buttonColor = UIColors(
-      baseColor: Theme.of(context).colorScheme.primary,
-    );
+    final buttonColor = UIColors(baseColor: Theme.of(context).colorScheme.primary);
     final width = MediaQuery.of(context).size.width * 0.25;
 
     return InkWell(

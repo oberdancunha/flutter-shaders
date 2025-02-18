@@ -8,9 +8,5 @@ final class MainMenuModel {
   final String image;
   final List<ShaderModel> shaders;
 
-  const MainMenuModel({
-    required this.title,
-    required this.image,
-    required this.shaders,
-  });
+  const MainMenuModel({required this.title, required this.image, required this.shaders});
 }

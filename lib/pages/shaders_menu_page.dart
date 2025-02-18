@@ -31,13 +31,10 @@ class _ShadersMenuPageState extends State<ShadersMenuPage> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.sizeOf(context);
     final shaders =
-        (ModalRoute.of(context)!.settings.arguments
-                as Map<String, dynamic>)['shaders']!
+        (ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>)['shaders']!
             as List<ShaderModel>;
     final title =
-        (ModalRoute.of(context)!.settings.arguments
-                as Map<String, dynamic>)['title']!
-            as String;
+        (ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>)['title']! as String;
 
     return ScaffoldWidget(
       title: title,
@@ -46,9 +43,7 @@ class _ShadersMenuPageState extends State<ShadersMenuPage> {
           controller: _scrollController,
           thumbVisibility: true,
           child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-            ),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             scrollDirection: Axis.vertical,
             controller: _scrollController,
             itemCount: shaders.length,

@@ -13,8 +13,7 @@ final class ShaderPage extends StatefulWidget {
   State<ShaderPage> createState() => _ShaderPageState();
 }
 
-class _ShaderPageState extends State<ShaderPage>
-    with SingleTickerProviderStateMixin {
+class _ShaderPageState extends State<ShaderPage> with SingleTickerProviderStateMixin {
   late final Ticker _ticker;
   double _time = 0.0;
 
@@ -37,8 +36,7 @@ class _ShaderPageState extends State<ShaderPage>
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.sizeOf(context);
     final shaderFile =
-        (ModalRoute.of(context)!.settings.arguments
-            as Map<String, String>)['shaderFile'];
+        (ModalRoute.of(context)!.settings.arguments as Map<String, String>)['shaderFile'];
 
     return ScaffoldWidget(
       title: 'Shader',

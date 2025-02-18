@@ -16,9 +16,7 @@ final class MainMenuPage extends StatelessWidget {
       title: 'Shaders',
       body: Center(
         child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-          ),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
           itemCount: mainMenu.length,
           itemBuilder: (_, index) {
             final menuElement = mainMenu.elementAt(index);
