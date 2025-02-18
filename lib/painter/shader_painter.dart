@@ -6,10 +6,7 @@ final class ShaderPainter extends CustomPainter {
   final FragmentShader shader;
   final double time;
 
-  const ShaderPainter({
-    required this.shader,
-    required this.time,
-  });
+  const ShaderPainter({required this.shader, required this.time});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -18,10 +15,7 @@ final class ShaderPainter extends CustomPainter {
       ..setFloat(1, size.height)
       ..setFloat(2, time);
     final paint = Paint()..shader = shader;
-    canvas.drawRect(
-      Rect.fromLTWH(0, 0, size.width, size.height),
-      paint,
-    );
+    canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
   }
 
   @override

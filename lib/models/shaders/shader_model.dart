@@ -5,8 +5,5 @@ final class ShaderModel {
   final String image;
   final String fileName;
 
-  const ShaderModel({
-    required this.image,
-    required this.fileName,
-  });
+  const ShaderModel({required this.image, required this.fileName});
 }

@@ -7,22 +7,20 @@ final class ButtonWidget extends StatelessWidget {
   final String image;
   final VoidCallback onTap;
 
-  const ButtonWidget({
-    required this.image,
-    required this.onTap,
-    super.key,
-  });
+  const ButtonWidget({required this.image, required this.onTap, super.key});
 
   static const adjustColor = 40;
 
   @override
   Widget build(BuildContext context) {
     final backgroundBaseColor = UIColors(
-      baseColor: UIColors(baseColor: Theme.of(context).colorScheme.primary).getColor(
-        adjustColor: -adjustColor ~/ 2,
-      ),
+      baseColor: UIColors(
+        baseColor: Theme.of(context).colorScheme.primary,
+      ).getColor(adjustColor: -adjustColor ~/ 2),
     );
-    final buttonColor = UIColors(baseColor: Theme.of(context).colorScheme.primary);
+    final buttonColor = UIColors(
+      baseColor: Theme.of(context).colorScheme.primary,
+    );
     final width = MediaQuery.of(context).size.width * 0.25;
 
     return InkWell(
@@ -76,10 +74,7 @@ final class ButtonWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              child: Image.asset(
-                'assets/images/$image',
-                fit: BoxFit.cover,
-              ),
+              child: Image.asset('assets/images/$image', fit: BoxFit.cover),
             ),
           ),
         ],

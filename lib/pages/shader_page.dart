@@ -7,15 +7,14 @@ import '../widgets/scaffold_widget.dart';
 
 @immutable
 final class ShaderPage extends StatefulWidget {
-  const ShaderPage({
-    super.key,
-  });
+  const ShaderPage({super.key});
 
   @override
   State<ShaderPage> createState() => _ShaderPageState();
 }
 
-class _ShaderPageState extends State<ShaderPage> with SingleTickerProviderStateMixin {
+class _ShaderPageState extends State<ShaderPage>
+    with SingleTickerProviderStateMixin {
   late final Ticker _ticker;
   double _time = 0.0;
 
@@ -25,8 +24,7 @@ class _ShaderPageState extends State<ShaderPage> with SingleTickerProviderStateM
     _ticker = createTicker((_) {
       _time += 0.016;
       setState(() {});
-    })
-      ..start();
+    })..start();
   }
 
   @override
@@ -39,7 +37,8 @@ class _ShaderPageState extends State<ShaderPage> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.sizeOf(context);
     final shaderFile =
-        (ModalRoute.of(context)!.settings.arguments as Map<String, String>)['shaderFile'];
+        (ModalRoute.of(context)!.settings.arguments
+            as Map<String, String>)['shaderFile'];
 
     return ScaffoldWidget(
       title: 'Shader',
@@ -51,10 +50,7 @@ class _ShaderPageState extends State<ShaderPage> with SingleTickerProviderStateM
             assetKey: 'shaders/$shaderFile',
             (_, shader, __) => RepaintBoundary(
               child: CustomPaint(
-                painter: ShaderPainter(
-                  shader: shader,
-                  time: _time,
-                ),
+                painter: ShaderPainter(shader: shader, time: _time),
                 isComplex: true,
                 willChange: false,
               ),

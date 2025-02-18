@@ -30,10 +30,14 @@ class _ShadersMenuPageState extends State<ShadersMenuPage> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.sizeOf(context);
-    final shaders = (ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>)['shaders']!
-        as List<ShaderModel>;
+    final shaders =
+        (ModalRoute.of(context)!.settings.arguments
+                as Map<String, dynamic>)['shaders']!
+            as List<ShaderModel>;
     final title =
-        (ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>)['title']! as String;
+        (ModalRoute.of(context)!.settings.arguments
+                as Map<String, dynamic>)['title']!
+            as String;
 
     return ScaffoldWidget(
       title: title,
@@ -42,28 +46,31 @@ class _ShadersMenuPageState extends State<ShadersMenuPage> {
           controller: _scrollController,
           thumbVisibility: true,
           child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+            ),
             scrollDirection: Axis.vertical,
             controller: _scrollController,
             itemCount: shaders.length,
-            itemBuilder: (_, index) => Center(
-              child: SizedBox(
-                width: screenSize.width * 0.25,
-                height: screenSize.height * 0.15,
-                child: ButtonWidget(
-                  image: shaders.elementAt(index).image,
-                  onTap: () {
-                    Navigator.pushNamed(
-                      context,
-                      '/shader',
-                      arguments: <String, String>{
-                        'shaderFile': shaders.elementAt(index).fileName,
+            itemBuilder:
+                (_, index) => Center(
+                  child: SizedBox(
+                    width: screenSize.width * 0.25,
+                    height: screenSize.height * 0.15,
+                    child: ButtonWidget(
+                      image: shaders.elementAt(index).image,
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/shader',
+                          arguments: <String, String>{
+                            'shaderFile': shaders.elementAt(index).fileName,
+                          },
+                        );
                       },
-                    );
-                  },
+                    ),
+                  ),
                 ),
-              ),
-            ),
           ),
         ),
       ),
