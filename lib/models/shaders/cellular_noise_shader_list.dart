@@ -5,5 +5,5 @@ final class CellularNoiseShaderList extends ShaderList {
   String get mainPath => 'cellular_noise';
 
   @override
-  int get count => 5;
+  int get count => 6;
 }
