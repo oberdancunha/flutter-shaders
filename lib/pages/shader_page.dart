@@ -46,7 +46,7 @@ class _ShaderPageState extends State<ShaderPage> with SingleTickerProviderStateM
           width: screenSize.width,
           child: ShaderBuilder(
             assetKey: 'shaders/$shaderFile',
-            (_, shader, __) => RepaintBoundary(
+            (_, shader, _) => RepaintBoundary(
               child: CustomPaint(
                 painter: ShaderPainter(shader: shader, time: _time),
                 isComplex: true,
